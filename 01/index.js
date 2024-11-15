@@ -1,5 +1,7 @@
 /**
- * ! Node js a code run korte hole "node filename" terminal a run korte hobe.
+ * !Variable:
  */
-console.log("Hello JS From Back End");
-document.write("Hello");
+var a=10;
+var b=20;
+var sum = a+b;
+console.log(sum);
