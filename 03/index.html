@@ -12,34 +12,19 @@
 
     <script>
         /**
-         * !  array methods
+         * !  String itself also an array.
+         * ! Prerecorder a ja kicu poraice akhane o same sob tai note kori nai r.
          */
-        var arr1 = ["A", "B", "C", "D"];
-        var arr2 = ["E", "F", "G", "H"];
-        
-        //array concat
-        var arr3= arr1.concat(arr2);
-        console.log(arr3)
 
-        //array from: string k array te convert kore.
-        var name = "My name is Rajesh Pal";
-        var nameArr=Array.from(name);
-        console.log(nameArr);
-        
-        //includes(): array er moddhe kono item ace kina kujhe dei.
-        var res= arr1.includes('D');
-        console.log(res);
+         //String replace
+         let country="Rajesh Pal Raijada";
+         let res=country.replace("Raijada","Ajoy");
+         console.log(res);
 
-        //indexOf():array er moddhe kono element koto number index a ace.
-        res=arr1.indexOf('D');
-        console.log(res);
-        
-        //pop()
-        console.log(arr1.pop());
-
-        //push()
-        console.log(arr1.push('E'));
-
+         //string slicing
+         res=country.slice(0,3);
+         console.log(res);
+         console.log(country);
     </script>
 </body>
 
