@@ -6,14 +6,26 @@
     <title>Dom</title>
 </head>
 <body>
-    <p id="toggle">On</p>
-    <button onclick="toggleText()">Toggle text</button>
+    <form onsubmit="login(event)" >
+        <label  for="userName">UserName</label>
+        <input id="userName" type="text">
+        <br><br>
+        <label for="pass">Pasword:</label>
+        <input id="pass" type="password">
+        <br><br>
+        <button type="submit">Login</button>
+   
+    </form>
+    <h1 id="msg"></h1>
+    <script>
+        function login(e){
+           e.preventDefault();
+           const userName= document.querySelector("#userName").value;
+        // console.log(userName);
+           const msg= document.querySelector("#msg");
+           msg.textContent = userName;
+        }
+    </script>
 </body>
-<script>
-    function toggleText(){
-       const text=  document.getElementById('toggle');
-       text.textContent = text.textContent==="On" ? "Off" : "On";
-       text.style.backgroundColor = text.style.backgroundColor ==="white" ? "red" : "white";
-    }
-</script>
+
 </html>
