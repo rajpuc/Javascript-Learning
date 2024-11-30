@@ -1,17 +1,29 @@
 /**
- * ! Object er moddhe quotation(" ") key te dite o pare na o dite pare. but value jodi string hoi tokon dite hobe.
+ * ! ai example er aghe amra j object baniyecilam sheta k json object o bola hoi.
+ * ! What is json array?
+ * * Jokon akhidoroner koyekta object array er bithore kotaw teke niye ashi tokon sheta k json array bola hoi.
+ * ! Use case of Json array: Jokon frontend teke backend a eksathe onkgula obj patanor proyojon pore ba backend teke frontend a onk object eksthe annar proyojon pore thokon amra Json array use kori.
  */
 
-var linkdin={
-    name:"Rajesh Pal",
-    designation:"Student",
-    company:"IDLC",
-    Followers:6705,
-    post_impression:"2570",
-    is_bangladeshi: true
-}
-console.log(linkdin);
-console.log(linkdin.name);
-console.log(linkdin.designation);
-console.log(linkdin.company);
-console.log(linkdin.Followers);
+var jsonArray = [
+    {
+        title:"JS",
+        description: "Hello Lucifer"
+    },
+    {
+        title:"Laravel",
+        description: "Hello Lucifer"
+    },
+    {
+        title:"Mongodb",
+        description: "Hello Lucifer"
+    },
+    {
+        title:"express JS",
+        description: "Hello Lucifer"
+    }
+]
+
+console.log(jsonArray);
+console.log(jsonArray[2]);
+console.log(jsonArray[2].title);

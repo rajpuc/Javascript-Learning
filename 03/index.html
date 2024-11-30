@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
 
     <script>
-        var linkdin={
-            "name":"Rajesh Pal",
-            "designation":"Student",
-            "company":"IDLC",
-            "Followers":"6705",
-            "post_impression":"2570",
-        }
-        console.log(linkdin);
-        console.log(linkdin.name);
-        console.log(linkdin.designation);
-        console.log(linkdin.company);
-        console.log(linkdin.Followers);
+        /**
+         * ! ai example er aghe amra j object baniyecilam sheta k json object o bola hoi.
+         * ! What is json array?
+         * * Jokon akhidoroner koyekta object array er bithore kotaw teke niye ashi tokon sheta k json array bola hoi.
+         */
+
+        var jsonArray = [
+            {
+                title: "JS",
+                description: "Hello Lucifer"
+            },
+            {
+                title: "Laravel",
+                description: "Hello Lucifer"
+            },
+            {
+                title: "Mongodb",
+                description: "Hello Lucifer"
+            },
+            {
+                title: "express JS",
+                description: "Hello Lucifer"
+            }
+        ]
+
+        console.log(jsonArray);
+        console.log(jsonArray[2]);
+        console.log(jsonArray[2].title);
     </script>
 </body>
+
 </html>
