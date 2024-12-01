@@ -6,25 +6,24 @@
     <title>Dom</title>
 </head>
 <body>
-    <form onsubmit="login(event)" >
-        <label  for="userName">UserName</label>
-        <input id="userName" type="text">
-        <br><br>
-        <label for="pass">Pasword:</label>
-        <input id="pass" type="password">
-        <br><br>
-        <button type="submit">Login</button>
+
    
-    </form>
-    <h1 id="msg"></h1>
+    <h1 id="msg">0</h1>
+    <button onclick="add()">Increment</button>
+    <button onclick="sub()">Decrement</button>
     <script>
-        function login(e){
-           e.preventDefault();
-           const userName= document.querySelector("#userName").value;
-        // console.log(userName);
-           const msg= document.querySelector("#msg");
-           msg.textContent = userName;
+        let count =0;
+        function add(){
+            count++;
+            const result = document.querySelector("#msg");
+            result.textContent = count;
         }
+        function sub(){
+            count--;
+            const result = document.querySelector("#msg");
+            result.textContent = count;
+        }
+    
     </script>
 </body>
 
