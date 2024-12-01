@@ -6,22 +6,16 @@
     <title>Dom</title>
 </head>
 <body>
-
-   
-    <h1 id="msg">0</h1>
-    <button onclick="add()">Increment</button>
-    <button onclick="sub()">Decrement</button>
+    <ul class="parent"></ul>
+    <button onclick="addItem()">Add item</button>
     <script>
-        let count =0;
-        function add(){
+        let count = 0;
+        function addItem(){
             count++;
-            const result = document.querySelector("#msg");
-            result.textContent = count;
-        }
-        function sub(){
-            count--;
-            const result = document.querySelector("#msg");
-            result.textContent = count;
+            var parent = document.querySelector(".parent");
+            let listItem = document.createElement('li');
+            listItem.textContent=count;
+            parent.appendChild(listItem);
         }
     
     </script>
