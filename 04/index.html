@@ -6,18 +6,13 @@
     <title>Dom</title>
 </head>
 <body>
-    <ul class="parent"></ul>
-    <button onclick="addItem()">Add item</button>
+    <img width="200px" src="./images/off.png" alt="">
+    <button onclick="Switch()">Switch</button>
     <script>
-        let count = 0;
-        function addItem(){
-            count++;
-            var parent = document.querySelector(".parent");
-            let listItem = document.createElement('li');
-            listItem.textContent=count;
-            parent.appendChild(listItem);
+        function Switch(){
+            const bulb = document.querySelector("img");
+            bulb.src = bulb.src.includes("off") ? "./images/on.png" : "./images/off.png";
         }
-    
     </script>
 </body>
 
