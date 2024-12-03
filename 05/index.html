@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 0.comments gula serially porba -->
+    <button onclick="getProducts()">Show me My Products</button>
+    <!-- 2.dhore nen akhane button er niche r o kicu element ace. -->
+    <div>
+        <!-- 3.Jehetu getProducts() call korle ota fullfill hote akta somoy nibe tar jonno to ai div er content gula execute na hoye boshe takbe erokom howa to uchit na. -->
+    </div>
+    <p id="output"></p>
+</body>
+<script>
+    // 1.Jokoni apni get product call korben tokon to akta time lagbe.
+    // 4. Taile amr get product function ta call korer por onno kaj k jate block na kore sheta amr teke ensure korte hobe. 
+    //5. atodin porjonto j function use koreci amra shegula onno kaj k block korto na. Cause oi function gula server er sathe communicate kore nai.Tai tader onno kicute time nosto howar shombobona kom cilo.
+    //6.kintu akn jehetu getProducts() function server er sathe communicate korbe,and amra jodi thake aivabe likhi:
+    /*7. 
+    function getProducts(){
+
+    } 
+    */
+    // 8. tahole onno element gula block hoye jabe. Cause tokon sequential execution hobe.
+    //9. Akn ai kajta jate na hoi tai amra nicher moto kore js er asynchronous behaviour ta use korbo. kono function er shamne amra "async" likhar maddhome asynchronous behaviour er shuchona kore dei oi function er moddhe.Means sha tar porer code k block korbe na.[ When you mark a function as async, you’re telling JavaScript that this function will do something that takes time (like waiting for data to load or waiting for a response).] 
+    async function getProducts(){
+        const response =await fetch("https://crud.teamrabbil.com/api/v1/ReadProduct");
+        //10. fetch function amk ai url ta te giye data ene dekhabe. Dorlam er jonno tar 1milisecond somoy lagbe.Kint totokkone jodi js interpreter next line a chole jai tahole amr response j variable ta shekhane kono data e pabo na. Shejonno amdaer k data asha porjonto wait korte hobe. R ai wait ta koranor jonno amader k "await" likhte hobe sei sob line er shamne jekhane wait korate hobe. [Inside an async function, when you use await, you're saying, "Hold on, let’s wait for this thing to finish before moving on."In other words, await pauses the function and waits for something to finish (like getting data from a server or a file), and then continues with the result once it’s done.]
+        //11. fetch() is a built-in function in JavaScript that allows you to get data from the internet (like asking a website for some information).
+        //12.However, getting data from the internet takes time. It doesn’t happen instantly. So, we need a way to tell JavaScript to wait until the data comes back. That’s where await comes in.
+
+        console.log(response);
+
+        /**
+         * !13. What is inside the response variable?
+         * fetch() sends an HTTP request to a website to ask for data.
+         * When the request is completed, the server sends back a response.
+         * The response from fetch() is not in a nice, readable format yet (it’s in something called "raw" or "stream" format).
+         * This response contains several things, such as:
+         * (i)Status code (whether the request was successful or failed)
+         * (ii)Headers (metadata about the response)
+         * (iii)Body (the actual content or data returned by the server).
+         * The response object that fetch() returns is a streamed response that contains all this information. It is not directly the data you're looking for, but rather a wrapper around the data. It’s essentially a package of information that includes the raw content returned by the server.
+         */
+        /**
+         *!14. Why do we need to call .json() on response?
+         *The reason we need to call .json() on the response object is because the  response from the server is usually not in the format we can easily use directly in JavaScript.
+
+         *For example, when you make a request to an API like the one you're using, the server typically sends back the data in JSON (JavaScript Object Notation) format, which is a string that represents a structured object (like a dictionary or map) with keys and values.
+
+         *However, this response is not immediately usable in JavaScript as an object; it is still in raw string format. To convert this string into an actual JavaScript object, we need to call the .json() method, which parses the raw string and turns it into a JavaScript object that we can work with.
+        */
+        const result = await response.json() //15.JSON format teke object format a convert korve.
+        console.log(result);
+        //16. HTML js er object bujhe na. kintu amader result er moddhe akn js object e ace. ajonno amra jodi ai data k html a show korate chai ata k json object a convert korte hobe. Cause JSON object hocce object but string. R HTML string bujte pare. R ai js obj k json obj te convert korer jonno JSON.stringify() k use korte hobe.
+        document.querySelector("#output").textContent= JSON.stringify(result);
+        } 
+
+
+</script>
+</html>
